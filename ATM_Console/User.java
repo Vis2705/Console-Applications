@@ -7,11 +7,7 @@ public class User {
     static int[] balance = {500,1000,2000};
 
     static Scanner sc = new Scanner(System.in);
-
-    // ⭐ Transaction storage
     static ArrayList<String>[] transactions = new ArrayList[3];
-
-    // ⭐ Initialize lists
     static {
         for(int i = 0; i < transactions.length; i++){
             transactions[i] = new ArrayList<>();
@@ -105,7 +101,7 @@ public class User {
             balance[i] -= amt;
             System.out.println("Withdraw successful");
 
-            addTransaction(i, "Withdraw: " + amt); // ⭐
+            addTransaction(i, "Withdraw: " + amt);
         }
         else{
             System.out.println("Invalid/Insufficient balance");
@@ -121,7 +117,7 @@ public class User {
             balance[i] += amt;
             System.out.println("Deposit successful");
 
-            addTransaction(i, "Deposit: " + amt); // ⭐
+            addTransaction(i, "Deposit: " + amt); 
         }
         else{
             System.out.println("Invalid amount");
@@ -138,7 +134,7 @@ public class User {
             pin[i] = sc.nextInt();
             System.out.println("PIN changed");
 
-            addTransaction(i, "PIN changed"); // ⭐
+            addTransaction(i, "PIN changed");
         }
         else{
             System.out.println("Wrong PIN");
@@ -164,7 +160,7 @@ public class User {
             return;
         }
 
-        if(receiverIndex == senderIndex){ // ⭐ prevent self-transfer
+        if(receiverIndex == senderIndex){ 
             System.out.println("Cannot transfer to same account");
             return;
         }
@@ -187,12 +183,10 @@ public class User {
         }
     }
 
-    // ⭐ Add transaction
     public static void addTransaction(int index, String msg){
         transactions[index].add(msg);
     }
 
-    // ⭐ Mini statement
     public static void miniStatement(int index){
 
         System.out.println("\n--- MINI STATEMENT ---");
