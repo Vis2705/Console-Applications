@@ -46,7 +46,7 @@ public class Admin {
         System.out.print("Enter amount: ");
         int amt = sc.nextInt();
 
-        if(amt > 0 && amt % 100 == 0){ // ⭐ validation
+        if(amt > 0 && amt % 100 == 0){ 
             atmBalance += amt;
             System.out.println("Deposit successful");
         }
